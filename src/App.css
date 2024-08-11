@@ -1,38 +1,99 @@
-.App {
+/* src/App.css */
+
+/* Global Styles */
+body {
+  background-color: hsl(0, 4%, 75%); /* Black background for the whole website */
+  color: #ffffff; /* White text for the whole website */
+  font-family: Arial, sans-serif;
+}
+
+/* To-Do List Styles */
+.to-do-list {
+  width: 100%;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(53, 52, 52, 0.1);
+  background-color: #150101; /* White background for the to-do list */
+  color: #000000; /* Black text for the to-do list */
+  animation: backgroundAnimation 10s infinite alternate;
+}
+
+.to-do-list h2 {
   text-align: center;
+  margin-bottom: 20px;
+  color: #c85e18; /* Orange color for the heading */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.to-do-list input[type="text"] {
+  width: calc(100% - 90px);
+  padding: 10px;
+  margin-right: 2px;
+  border: 1px solid #c85e18; /* Orange border */
+  border-radius: 4px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #c85e18; /* Orange background */
+  color: #ffffff; /* White text */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.add-btn:hover {
+  background-color: #c85e18; /* Darker orange */
+}
+
+.tasks ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+.tasks li {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
 }
 
-.App-link {
-  color: #61dafb;
+.tasks .text {
+  flex-grow: 1;
+  margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tasks button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 5px;
+}
+
+#del {
+  background-color: #c85e18; /* Red background */
+  color: #ffffff; /* White text */
+}
+
+#del:hover {
+  background-color: #c85e18; /* Darker red */
+}
+
+#move-up, #move-down {
+  background-color: #007bff; /* Blue background */
+  color: #ffffff; /* White text */
+}
+
+#move-up:hover, #move-down:hover {
+  background-color: #0056b3; /* Darker blue */
+}
+
+@keyframes backgroundAnimation {
+  0% { background-color: #f3f3f3; }
+  100% { background-color: #e8e8e8; }
 }
